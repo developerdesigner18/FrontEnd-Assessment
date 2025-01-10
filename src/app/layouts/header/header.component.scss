@@ -1,0 +1,32 @@
+.main-header {
+  background-color: #ff0000;
+
+  .sub-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px;
+    max-width: 1280px;
+    margin: auto;
+
+    .header-logo {
+      width: 80px;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+
+      img{
+        width: 20px;
+        height: auto;
+      }
+
+      .profile-img{
+        width: 25px;
+        height: 25px;
+        border-radius: 2px;
+      }
+    }
+  }
+}

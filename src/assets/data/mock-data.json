@@ -1,0 +1,77 @@
+{
+  "data":[
+    {
+      "pk": 987,
+      "name": "Premium Headphones",
+      "points": 150,
+      "display_img_url": "assets/images/rose.jpg",
+      "quantity": 14,
+      "valid_until": "2024-12-31T00:00:00",
+      "low_quantity": 10
+    },
+    {
+      "pk": 988,
+      "name": "Bluetooth Speaker",
+      "points": 200,
+      "display_img_url": "assets/images/rose.jpg",
+      "quantity": 5,
+      "valid_until": "2024-12-31T00:00:00",
+      "low_quantity": 8
+    },
+    {
+      "pk": 989,
+      "name": "Smart Watch",
+      "points": 350,
+      "display_img_url": "assets/images/rose.jpg",
+      "quantity": 0,
+      "valid_until": "2024-12-31T00:00:00",
+      "low_quantity": 5
+    },
+    {
+      "pk": 990,
+      "name": "Demo reward for Purchase Price",
+      "points": 500,
+      "display_img_url": "assets/images/rose.jpg",
+      "quantity": 3,
+      "valid_until": "2024-12-31T00:00:00",
+      "low_quantity": 5
+    },
+    {
+      "pk": 991,
+      "name": "Gift Card",
+      "points": 100,
+      "display_img_url": "assets/images/rose.jpg",
+      "quantity": 20,
+      "valid_until": "2024-12-31T00:00:00",
+      "low_quantity": 5
+    },
+    {
+      "pk": 992,
+      "name": "Coffee Maker",
+      "points": 250,
+      "display_img_url": "assets/images/rose.jpg",
+      "quantity": 8,
+      "valid_until": "2024-12-31T00:00:00",
+      "low_quantity": 10
+    },
+    {
+      "pk": 993,
+      "name": "Fitness Tracker",
+      "points": 300,
+      "display_img_url": "assets/images/rose.jpg",
+      "quantity": 2,
+      "valid_until": "2024-12-31T00:00:00",
+      "low_quantity": 3
+    },
+    {
+      "pk": 994,
+      "name": "Wireless Earbuds",
+      "points": 180,
+      "display_img_url": "assets/images/rose.jpg",
+      "quantity": 0,
+      "valid_until": "2024-12-31T00:00:00",
+      "low_quantity": 5
+    }
+  ]
+}
+

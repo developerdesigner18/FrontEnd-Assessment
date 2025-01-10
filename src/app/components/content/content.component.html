@@ -1,0 +1,131 @@
+<main class="main-content">
+  <div class="sub-content">
+    <div class="search-section">
+      <div class="search-title">Search</div>
+      <div class="search-input-container">
+        <input
+          class="search-input"
+          type="text"
+          name="search"
+          placeholder="Search"
+          id="search-input"
+        />
+        <img class="search-icon" src="assets/images/search.png" alt="search" />
+      </div>
+    </div>
+    <div class="filters-chip">
+      <div class="filter-title">Applied Filters:</div>
+      <div class="chip-box-container">
+        <div class="chip-box-contain">
+          e-Voucher<img
+            class="clear-icon"
+            src="assets/images/cross.png"
+            alt="clear"
+          />
+        </div>
+        <div class="chip-box-contain">
+          Clear Filters<img
+            class="clear-icon"
+            src="assets/images/cross.png"
+            alt="clear"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="product-section">
+      <div class="left-section">
+        <div class="category-title">Categories</div>
+        <div class="category-vouchers-products">
+          <div class="category-vouchers">
+            <div class="vouchers-left">
+              <img
+                class="voucher-down"
+                src="assets/images/down-chevron.png"
+                alt=""
+              />
+              <div>e-Voucher</div>
+            </div>
+            <img class="complete-icon" src="assets/icons/complete.svg" alt="" />
+          </div>
+          <div class="category-vouchers">
+            <div class="vouchers-left">
+              <img
+                class="voucher-down"
+                src="assets/images/down-chevron.png"
+                alt=""
+              />
+              <div>Products</div>
+            </div>
+            <img
+              class="complete-icon"
+              src="assets/icons/complete-outline.svg"
+              alt=""
+            />
+          </div>
+        </div>
+        <div class="category-vouchers-products">
+          <div class="category-vouchers">
+            <div class="vouchers-left">
+              <img
+                class="voucher-up"
+                src="assets/images/down-chevron.png"
+                alt=""
+              />
+              <div>Evergreen</div>
+            </div>
+            <img
+              class="complete-icon"
+              src="assets/icons/complete-outline.svg"
+              alt=""
+            />
+          </div>
+        </div>
+        <div class="category-vouchers-products">
+          <div class="category-vouchers">
+            <div class="vouchers-left">
+              <img
+                class="voucher-up"
+                src="assets/images/down-chevron.png"
+                alt=""
+              />
+              <div>Fashion & Retail</div>
+            </div>
+            <img
+              class="complete-icon"
+              src="assets/icons/complete-outline.svg"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+      <div class="right-section">
+        <div class="product-page-header">
+          <div class="product-page-title">{{ allProducts['data'].length }} results found</div>
+          <button class="sort-button">Sort</button>
+        </div>
+        <div class="product-list">
+          @for (product of allProducts['data']; track $index) {
+          <div class="product-card">
+            <div class="product-img-container">
+              <img class="product-img" [src]="product.display_img_url || placeHolderImage" alt="productImage" />
+              @if (product.quantity === 0) {
+                <div class="out-of-stock-tag">(Out of stock)</div>
+              }@else if(product.quantity > 0 && product.quantity <= product.low_quantity) {
+                <div class="on-high-demand-tag">
+                  <div class="on-high-demand-text">ON HIGH DEMAND</div>
+                  <div class="on-high-demand-count">(Only {{ product.quantity }} rewards left)</div>
+                </div>
+               }
+            </div>
+            <div class="product-name">{{ product.name }}</div>
+            <div class="product-points">{{ product.points }}</div>
+            <div class="product-valid">
+              <span class="valid-title">Valid Until</span> {{ product.valid_until | date: 'dd-MM-yyyy' }}
+            </div>
+          </div>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
