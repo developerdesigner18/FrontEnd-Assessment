@@ -9,6 +9,8 @@
           name="search"
           placeholder="Search"
           id="search-input"
+          [(ngModel)]="searchQuery"
+          (input)="applySearch($event)"
         />
         <img class="search-icon" src="assets/images/search.png" alt="search" />
       </div>
@@ -100,27 +102,39 @@
       </div>
       <div class="right-section">
         <div class="product-page-header">
-          <div class="product-page-title">{{ allProducts['data'].length }} results found</div>
-          <button class="sort-button">Sort</button>
+          <div class="product-page-title">
+            {{ displayedProducts.length }} results found
+          </div>
+          <button (click)="toggleSortSidebar()" class="sort-button">
+            Sort
+          </button>
         </div>
         <div class="product-list">
-          @for (product of allProducts['data']; track $index) {
+          @for (product of displayedProducts; track $index) {
           <div class="product-card">
             <div class="product-img-container">
-              <img class="product-img" [src]="product.display_img_url || placeHolderImage" alt="productImage" />
+              <img
+                class="product-img"
+                [src]="product.display_img_url || placeHolderImage"
+                alt="productImage"
+              />
               @if (product.quantity === 0) {
-                <div class="out-of-stock-tag">(Out of stock)</div>
-              }@else if(product.quantity > 0 && product.quantity <= product.low_quantity) {
-                <div class="on-high-demand-tag">
-                  <div class="on-high-demand-text">ON HIGH DEMAND</div>
-                  <div class="on-high-demand-count">(Only {{ product.quantity }} rewards left)</div>
+              <div class="out-of-stock-tag">(Out of stock)</div>
+              }@else if(product.quantity > 0 && product.quantity <=
+              product.low_quantity) {
+              <div class="on-high-demand-tag">
+                <div class="on-high-demand-text">ON HIGH DEMAND</div>
+                <div class="on-high-demand-count">
+                  (Only {{ product.quantity }} rewards left)
                 </div>
-               }
+              </div>
+              }
             </div>
             <div class="product-name">{{ product.name }}</div>
-            <div class="product-points">{{ product.points }}</div>
+            <div class="product-points">{{ product.points }} Points</div>
             <div class="product-valid">
-              <span class="valid-title">Valid Until</span> {{ product.valid_until | date: 'dd-MM-yyyy' }}
+              <span class="valid-title">Valid Until</span>
+              {{ product.valid_until | date : "dd-MM-yyyy" }}
             </div>
           </div>
           }
@@ -129,3 +143,39 @@
     </div>
   </div>
 </main>
+
+@if (isSidenav) {
+
+<div class="sidebar-sort">
+  <div class="sidebar-content">
+    <div class="sidebar-content-filter">
+      <div class="filter-text">Filter By</div>
+      <div class="reset-all" (click)="resetSort()">Reset All</div>
+    </div>
+    <div class="sidebar-content-sort">
+      <div class="sort-title">Sort</div>
+      <div class="sort-asc-desc">
+        <button
+          [ngClass]="{
+            'sort-active': selectedSortOrder == 'asc',
+            'sort-inactive': selectedSortOrder !== 'asc'
+          }"
+          (click)="setSortOrder('asc')"
+        >
+          A to Z</button
+        ><button
+          [ngClass]="{
+            'sort-active': selectedSortOrder == 'desc',
+            'sort-inactive': selectedSortOrder !== 'desc'
+          }"
+          (click)="setSortOrder('desc')"
+        >
+          Z to A
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <button class="sidebar-action" (click)="applySort()">Apply</button>
+</div>
+}

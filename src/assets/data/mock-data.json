@@ -13,18 +13,18 @@
       "pk": 988,
       "name": "Bluetooth Speaker",
       "points": 200,
-      "display_img_url": "assets/images/rose.jpg",
+      "display_img_url": "assets/images/fairvoucher.png",
       "quantity": 5,
-      "valid_until": "2024-12-31T00:00:00",
+      "valid_until": "2024-11-31T00:00:00",
       "low_quantity": 8
     },
     {
       "pk": 989,
       "name": "Smart Watch",
       "points": 350,
-      "display_img_url": "assets/images/rose.jpg",
+      "display_img_url": "assets/images/handicap.webp",
       "quantity": 0,
-      "valid_until": "2024-12-31T00:00:00",
+      "valid_until": "2024-08-31T00:00:00",
       "low_quantity": 5
     },
     {
@@ -33,7 +33,7 @@
       "points": 500,
       "display_img_url": "assets/images/rose.jpg",
       "quantity": 3,
-      "valid_until": "2024-12-31T00:00:00",
+      "valid_until": "2024-04-31T00:00:00",
       "low_quantity": 5
     },
     {
@@ -51,7 +51,7 @@
       "points": 250,
       "display_img_url": "assets/images/rose.jpg",
       "quantity": 8,
-      "valid_until": "2024-12-31T00:00:00",
+      "valid_until": "2024-06-31T00:00:00",
       "low_quantity": 10
     },
     {
@@ -60,7 +60,7 @@
       "points": 300,
       "display_img_url": "assets/images/rose.jpg",
       "quantity": 2,
-      "valid_until": "2024-12-31T00:00:00",
+      "valid_until": "2024-05-31T00:00:00",
       "low_quantity": 3
     },
     {
@@ -69,7 +69,7 @@
       "points": 180,
       "display_img_url": "assets/images/rose.jpg",
       "quantity": 0,
-      "valid_until": "2024-12-31T00:00:00",
+      "valid_until": "2024-03-31T00:00:00",
       "low_quantity": 5
     }
   ]

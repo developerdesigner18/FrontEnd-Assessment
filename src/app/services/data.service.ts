@@ -4,13 +4,13 @@ import { Observable } from 'rxjs';
 import { RewardResponse } from '../models/reward';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class DataService {
   private apiURL = 'assets/data/mock-data.json';
-  constructor(private http:HttpClient) { }
+  constructor(private http: HttpClient) {}
 
-  getProductsData(): Observable<RewardResponse>{
+  getProductsData(): Observable<RewardResponse> {
     return this.http.get<RewardResponse>(this.apiURL);
   }
 }
